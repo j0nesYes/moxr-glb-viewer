@@ -21,12 +21,28 @@ class App {
 	 * @param  {Location} location
 	 */
 	constructor(el, location) {
-		const hash = location.hash ? queryString.parse(location.hash) : {};
+		console.log("[App] Init");
+
+		let modelUrl = "";
+		const pathParts = location.pathname.split("/").filter(Boolean);
+		console.log("[App] Path parts:", pathParts);
+
+		if (pathParts.length > 0) {
+			const modelName = pathParts[pathParts.length - 1];
+			console.log("[App] Model name detected:", modelName);
+
+			modelUrl = `https://00224466.xyz/Upload/${modelName}.glb`;
+			console.log("[App] Model URL set to:", modelUrl);
+		}
+
+		const queryParams = queryString.parse(location.search);
+		console.log("[App] Query params:", queryParams);
+
 		this.options = {
-			kiosk: Boolean(hash.kiosk),
-			model: hash.model || '',
-			preset: hash.preset || '',
-			cameraPosition: hash.cameraPosition ? hash.cameraPosition.split(',').map(Number) : null,
+			kiosk: Boolean(queryParams.kiosk),
+			model: modelUrl || queryParams.model || '',
+			preset: queryParams.preset || '',
+			cameraPosition: queryParams.cameraPosition ? queryParams.cameraPosition.split(',').map(Number) : null,
 		};
 
 		this.el = el;
@@ -40,15 +56,15 @@ class App {
 		this.createDropzone();
 		this.hideSpinner();
 
-		const options = this.options;
-
-		if (options.kiosk) {
+		if (this.options.kiosk) {
 			const headerEl = document.querySelector('header');
-			headerEl.style.display = 'none';
+			if (headerEl) headerEl.style.display = 'none';
+			console.log("[App] Kiosk mode enabled → hiding header");
 		}
 
-		if (options.model) {
-			this.view(options.model, '', new Map());
+		if (this.options.model) {
+			console.log("[App] Loading model:", this.options.model);
+			this.view(this.options.model, '', new Map());
 		}
 	}
 
