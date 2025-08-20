@@ -539,6 +539,8 @@ export class Viewer {
 			hideable: true,
 		}));
 
+		// Conditionally display the download button if '?file=' is in the URL.
+		const queryParams = new URLSearchParams(window.location.search);
 		if (queryParams.has('file')) {
 			gui.add(this, 'downloadGLB').name('Download .glb-File');
 		}
