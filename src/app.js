@@ -23,28 +23,28 @@ class App {
 	constructor(el, location) {
 		console.log("[App] Init");
 
-		let modelUrl = "";
-		const pathParts = location.pathname.split("/").filter(Boolean);
-		console.log("[App] Path parts:", pathParts);
+		// Use the modern URL API for robust parsing.
+		const url = new URL(location.href);
+		const queryParams = url.searchParams;
 
-		if (pathParts.length > 0) {
-			const modelName = pathParts[pathParts.length - 1];
-			console.log("[App] Model name detected:", modelName);
+		let modelUrl = '';
 
-			modelUrl = `https://00224466.xyz/Upload/${modelName}.glb`;
-			console.log("[App] Model URL set to:", modelUrl);
+		// Only load a model if the "?file=" parameter is present.
+		if (queryParams.has('file')) {
+			const fileName = queryParams.get('file');
+			modelUrl = `https://00224466.xyz/Upload/${fileName}`;
+			console.log(`[App] Loading model from 'file' parameter: ${modelUrl}`);
+		} else {
+			console.log("[App] No 'file' parameter found in URL. No model will be loaded.");
 		}
-
-		const queryParams = queryString.parse(location.search);
-		console.log("[App] Query params:", queryParams);
-
+		
 		this.options = {
 			kiosk: Boolean(queryParams.kiosk),
 			model: modelUrl || queryParams.model || '',
 			preset: queryParams.preset || '',
 			cameraPosition: queryParams.cameraPosition ? queryParams.cameraPosition.split(',').map(Number) : null,
 		};
-
+		
 		this.el = el;
 		this.viewer = null;
 		this.viewerEl = null;
