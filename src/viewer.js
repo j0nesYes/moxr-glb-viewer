@@ -525,42 +525,42 @@ export class Viewer {
 
 		// Display controls.
 		const dispFolder = gui.addFolder('Display');
-		const envBackgroundCtrl = dispFolder.add(this.state, 'background');
-		envBackgroundCtrl.onChange(() => this.updateEnvironment());
+		// const envBackgroundCtrl = dispFolder.add(this.state, 'background');
+		// envBackgroundCtrl.onChange(() => this.updateEnvironment());
 		const autoRotateCtrl = dispFolder.add(this.state, 'autoRotate');
 		autoRotateCtrl.onChange(() => this.updateDisplay());
 		const wireframeCtrl = dispFolder.add(this.state, 'wireframe');
 		wireframeCtrl.onChange(() => this.updateDisplay());
-		const skeletonCtrl = dispFolder.add(this.state, 'skeleton');
-		skeletonCtrl.onChange(() => this.updateDisplay());
-		const gridCtrl = dispFolder.add(this.state, 'grid');
-		gridCtrl.onChange(() => this.updateDisplay());
-		dispFolder.add(this.controls, 'screenSpacePanning');
-		const pointSizeCtrl = dispFolder.add(this.state, 'pointSize', 1, 16);
-		pointSizeCtrl.onChange(() => this.updateDisplay());
+		// const skeletonCtrl = dispFolder.add(this.state, 'skeleton');
+		// skeletonCtrl.onChange(() => this.updateDisplay());
+		// const gridCtrl = dispFolder.add(this.state, 'grid');
+		// gridCtrl.onChange(() => this.updateDisplay());
+		// dispFolder.add(this.controls, 'screenSpacePanning');
+		// const pointSizeCtrl = dispFolder.add(this.state, 'pointSize', 1, 16);
+		// pointSizeCtrl.onChange(() => this.updateDisplay());
 		const bgColorCtrl = dispFolder.addColor(this.state, 'bgColor');
 		bgColorCtrl.onChange(() => this.updateBackground());
 
 		// Lighting controls.
-		const lightFolder = gui.addFolder('Lighting');
-		const envMapCtrl = lightFolder.add(
-			this.state,
-			'environment',
-			environments.map((env) => env.name),
-		);
-		envMapCtrl.onChange(() => this.updateEnvironment());
-		[
-			lightFolder.add(this.state, 'toneMapping', {
-				Linear: LinearToneMapping,
-				'ACES Filmic': ACESFilmicToneMapping,
-			}),
-			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
-			lightFolder.add(this.state, 'punctualLights').listen(),
-			lightFolder.add(this.state, 'ambientIntensity', 0, 2),
-			lightFolder.addColor(this.state, 'ambientColor'),
-			lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
-			lightFolder.addColor(this.state, 'directColor'),
-		].forEach((ctrl) => ctrl.onChange(() => this.updateLights()));
+		// const lightFolder = gui.addFolder('Lighting');
+		// const envMapCtrl = lightFolder.add(
+		// 	this.state,
+		// 	'environment',
+		// 	environments.map((env) => env.name),
+		// );
+		// envMapCtrl.onChange(() => this.updateEnvironment());
+		// [
+		// 	lightFolder.add(this.state, 'toneMapping', {
+		// 		Linear: LinearToneMapping,
+		// 		'ACES Filmic': ACESFilmicToneMapping,
+		// 	}),
+		// 	lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
+		// 	lightFolder.add(this.state, 'punctualLights').listen(),
+		// 	lightFolder.add(this.state, 'ambientIntensity', 0, 2),
+		// 	lightFolder.addColor(this.state, 'ambientColor'),
+		// 	lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
+		// 	lightFolder.addColor(this.state, 'directColor'),
+		// ].forEach((ctrl) => ctrl.onChange(() => this.updateLights()));
 
 		// Animation controls.
 		this.animFolder = gui.addFolder('Animation');
