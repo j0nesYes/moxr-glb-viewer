@@ -171,8 +171,15 @@ class App {
 document.body.innerHTML += Footer();
 
 document.addEventListener('DOMContentLoaded', () => {
-	const app = new App(document.body, location);
+	// STEP 1: Make the container visible FIRST.
+	const dropzoneElement = document.querySelector('.dropzone');
+	if (dropzoneElement) {
+		dropzoneElement.style.visibility = 'visible';
+	}
 
+	// STEP 2: NOW initialize the app.
+	// The Viewer will be able to correctly measure the visible container.
+	const app = new App(document.body, location);
 	window.VIEWER.app = app;
 
 	console.info('[glTF Viewer] Debugging data exported as `window.VIEWER`.');
