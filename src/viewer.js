@@ -61,6 +61,8 @@ export class Viewer {
 		this.mixer = null;
 		this.clips = [];
 		this.gui = null;
+		this.gltfUrl = null;
+		this.gltfFilename = null;
 
 		this.state = {
 			environment:
@@ -175,6 +177,20 @@ export class Viewer {
 	}
 
 	load(url, rootPath, assetMap) {
+		this.gltfUrl = url;
+
+		let filename;
+		if (assetMap && assetMap.size === 1) {
+			filename = assetMap.keys().next().value;
+		} else if (!url.startsWith('blob:')) {
+			try {
+				filename = new URL(url).pathname.split('/').pop();
+			} catch (e) {
+				/* ignore */
+			}
+		}
+		this.gltfFilename = filename || 'model.glb';
+
 		const baseURL = LoaderUtils.extractUrlBase(url);
 
 		// Load.
@@ -523,6 +539,10 @@ export class Viewer {
 			hideable: true,
 		}));
 
+		if (queryParams.has('file')) {
+			gui.add(this, 'downloadGLB').name('Download .glb-File');
+		}
+
 		// Display controls.
 		const dispFolder = gui.addFolder('Display');
 		// const envBackgroundCtrl = dispFolder.add(this.state, 'background');
@@ -673,6 +693,19 @@ export class Viewer {
 				this.animCtrls.push(ctrl);
 			});
 		}
+	}
+
+	downloadGLB() {
+		if (!this.gltfUrl) {
+			console.warn('No model loaded to download.');
+			return;
+		}
+		const link = document.createElement('a');
+		link.href = this.gltfUrl;
+		link.download = this.gltfFilename;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 	}
 
 	clear() {
