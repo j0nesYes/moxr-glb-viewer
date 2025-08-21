@@ -71,35 +71,21 @@ body {
  * Header
  */
 
-header {
-  display: flex;
-  background: #353535;
-  padding: 0 2em;
-  height: 4rem;
-  line-height: 4rem;
-  align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-
-  -webkit-app-region: drag;
-}
-
-header h1 {
-  color: #F5F5F5;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 4rem;
+#model-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  z-index: 100;
+  text-shadow: 1px 1px 2px black;
   margin: 0;
+  font-size: 1rem;
 }
 
-header h1 > a {
-  color: inherit;
-  font-size: inherit;
-  text-decoration: inherit;
+#model-title span{
+ font-size: 0.9rem; 
 }
+
 
 .gui-wrap {
   position: absolute;

@@ -34,6 +34,34 @@ class App {
 			const fileName = queryParams.get('file');
 			modelUrl = `https://00224466.xyz/MOXR/Upload/${fileName}`;
 			console.log(`[App] Loading model from 'file' parameter: ${modelUrl}`);
+
+			try {
+				// 1. Remove the file extension (e.g., ".glb")
+				const nameWithoutExtension = fileName.slice(0, fileName.lastIndexOf('.'));
+
+				// 2. Split the remaining string by the underscore "_"
+				const parts = nameWithoutExtension.split('_');
+
+				// 3. Get the last part of the resulting array (the creator's name)
+				const creatorName = parts[parts.length - 1];
+
+				// 4. NEW: Replace all hyphens with spaces for better readability
+				const formattedCreatorName = creatorName.replaceAll('-', ' ');
+
+				// 5. Create an element to show the title in the UI
+				const titleElement = document.createElement('h1');
+				titleElement.id = 'model-title';
+
+				// 6. Set the content using the formatted name
+				titleElement.innerHTML = `<span>Created by: </span>${formattedCreatorName}`;
+
+				// 7. Add the new element to the top of the page
+				document.body.prepend(titleElement);
+
+			} catch (e) {
+				console.error("Could not parse display name from filename:", fileName);
+			}
+
 		} else {
 			console.log("[App] No 'file' parameter found in URL. No model will be loaded.");
 		}
