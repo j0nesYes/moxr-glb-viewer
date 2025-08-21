@@ -32,7 +32,7 @@ class App {
 		// Only load a model if the "?file=" parameter is present.
 		if (queryParams.has('file')) {
 			const fileName = queryParams.get('file');
-			modelUrl = `https://00224466.xyz/Upload/${fileName}`;
+			modelUrl = `https://00224466.xyz/MOXR/Upload/${fileName}`;
 			console.log(`[App] Loading model from 'file' parameter: ${modelUrl}`);
 		} else {
 			console.log("[App] No 'file' parameter found in URL. No model will be loaded.");
