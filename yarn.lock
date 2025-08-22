@@ -2,20 +2,20 @@
 # yarn lockfile v1
 
 
-"@esbuild/win32-x64@0.21.5":
+"@esbuild/darwin-arm64@0.21.5":
   version "0.21.5"
-  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz"
-  integrity sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw==
+  resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.21.5.tgz"
+  integrity sha512-DwqXqZyuk5AiWWf3UfLiRDJ5EDd49zg6O9wclZ7kUMv2WRFr4HKjXp/5t8JZ11QbQfUS6/cRCKGwYhtNAY88kQ==
 
-"@rollup/rollup-win32-x64-msvc@4.40.2":
-  version "4.40.2"
-  resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.40.2.tgz"
-  integrity sha512-bwspbWB04XJpeElvsp+DCylKfF4trJDa2Y9Go8O6A7YLX2LIKGcNK/CYImJN6ZP4DcuOHB4Utl3iCbnR62DudA==
+"@rollup/rollup-darwin-arm64@4.47.1":
+  version "4.47.1"
+  resolved "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.47.1.tgz"
+  integrity sha512-tV6reObmxBDS4DDyLzTDIpymthNlxrLBGAoQx6m2a7eifSNEZdkXQl1PE4ZjCkEDPVgNXSzND/k9AQ3mC4IOEQ==
 
-"@types/estree@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.7.tgz"
-  integrity sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==
+"@types/estree@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.8.tgz"
+  integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
 
 dat.gui@^0.7.9:
   version "0.7.9"
@@ -61,12 +61,17 @@ filter-obj@^5.1.0:
   resolved "https://registry.npmjs.org/filter-obj/-/filter-obj-5.1.0.tgz"
   integrity sha512-qWeTREPoT7I0bifpPUXtxkZJ1XJzxWtfoWWkdVGqa+eCr3SHW/Ocp89o8vLvbUuQnadybJpjOKu4V+RwO6sGng==
 
+fsevents@~2.3.2, fsevents@~2.3.3:
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+
 gltf-validator@^2.0.0-dev.3.10:
   version "2.0.0-dev.3.10"
   resolved "https://registry.npmjs.org/gltf-validator/-/gltf-validator-2.0.0-dev.3.10.tgz"
   integrity sha512-odJ4k0tRkGXiDGn78yDBg+fBbAIvBnXxh3RwAta0emSxGtyagFE8B4xELB1oYe3S5RD8Ci3uZAsZaascH2LAEQ==
 
-nanoid@^3.3.8:
+nanoid@^3.3.11:
   version "3.3.11"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
@@ -77,18 +82,18 @@ picocolors@^1.1.1:
   integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
 
 postcss@^8.4.43:
-  version "8.5.3"
-  resolved "https://registry.npmjs.org/postcss/-/postcss-8.5.3.tgz"
-  integrity sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==
+  version "8.5.6"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz"
+  integrity sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==
   dependencies:
-    nanoid "^3.3.8"
+    nanoid "^3.3.11"
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
 prettier@^3.2.5:
-  version "3.5.3"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-3.5.3.tgz"
-  integrity sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==
+  version "3.6.2"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.6.2.tgz"
+  integrity sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==
 
 query-string@^8.1.0:
   version "8.2.0"
@@ -100,32 +105,32 @@ query-string@^8.1.0:
     split-on-first "^3.0.0"
 
 rollup@^4.20.0:
-  version "4.40.2"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-4.40.2.tgz"
-  integrity sha512-tfUOg6DTP4rhQ3VjOO6B4wyrJnGOX85requAXvqYTHsOgb2TFJdZ3aWpT8W2kPoypSGP7dZUyzxJ9ee4buM5Fg==
+  version "4.47.1"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-4.47.1.tgz"
+  integrity sha512-iasGAQoZ5dWDzULEUX3jiW0oB1qyFOepSyDyoU6S/OhVlDIwj5knI5QBa5RRQ0sK7OE0v+8VIi2JuV+G+3tfNg==
   dependencies:
-    "@types/estree" "1.0.7"
+    "@types/estree" "1.0.8"
   optionalDependencies:
-    "@rollup/rollup-android-arm-eabi" "4.40.2"
-    "@rollup/rollup-android-arm64" "4.40.2"
-    "@rollup/rollup-darwin-arm64" "4.40.2"
-    "@rollup/rollup-darwin-x64" "4.40.2"
-    "@rollup/rollup-freebsd-arm64" "4.40.2"
-    "@rollup/rollup-freebsd-x64" "4.40.2"
-    "@rollup/rollup-linux-arm-gnueabihf" "4.40.2"
-    "@rollup/rollup-linux-arm-musleabihf" "4.40.2"
-    "@rollup/rollup-linux-arm64-gnu" "4.40.2"
-    "@rollup/rollup-linux-arm64-musl" "4.40.2"
-    "@rollup/rollup-linux-loongarch64-gnu" "4.40.2"
-    "@rollup/rollup-linux-powerpc64le-gnu" "4.40.2"
-    "@rollup/rollup-linux-riscv64-gnu" "4.40.2"
-    "@rollup/rollup-linux-riscv64-musl" "4.40.2"
-    "@rollup/rollup-linux-s390x-gnu" "4.40.2"
-    "@rollup/rollup-linux-x64-gnu" "4.40.2"
-    "@rollup/rollup-linux-x64-musl" "4.40.2"
-    "@rollup/rollup-win32-arm64-msvc" "4.40.2"
-    "@rollup/rollup-win32-ia32-msvc" "4.40.2"
-    "@rollup/rollup-win32-x64-msvc" "4.40.2"
+    "@rollup/rollup-android-arm-eabi" "4.47.1"
+    "@rollup/rollup-android-arm64" "4.47.1"
+    "@rollup/rollup-darwin-arm64" "4.47.1"
+    "@rollup/rollup-darwin-x64" "4.47.1"
+    "@rollup/rollup-freebsd-arm64" "4.47.1"
+    "@rollup/rollup-freebsd-x64" "4.47.1"
+    "@rollup/rollup-linux-arm-gnueabihf" "4.47.1"
+    "@rollup/rollup-linux-arm-musleabihf" "4.47.1"
+    "@rollup/rollup-linux-arm64-gnu" "4.47.1"
+    "@rollup/rollup-linux-arm64-musl" "4.47.1"
+    "@rollup/rollup-linux-loongarch64-gnu" "4.47.1"
+    "@rollup/rollup-linux-ppc64-gnu" "4.47.1"
+    "@rollup/rollup-linux-riscv64-gnu" "4.47.1"
+    "@rollup/rollup-linux-riscv64-musl" "4.47.1"
+    "@rollup/rollup-linux-s390x-gnu" "4.47.1"
+    "@rollup/rollup-linux-x64-gnu" "4.47.1"
+    "@rollup/rollup-linux-x64-musl" "4.47.1"
+    "@rollup/rollup-win32-arm64-msvc" "4.47.1"
+    "@rollup/rollup-win32-ia32-msvc" "4.47.1"
+    "@rollup/rollup-win32-x64-msvc" "4.47.1"
     fsevents "~2.3.2"
 
 simple-dropzone@^0.8.3:
